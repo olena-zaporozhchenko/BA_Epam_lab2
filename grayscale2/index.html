@@ -34,18 +34,15 @@
 		button.html("View tech project");
 		button.click(function() {
 			$.get("https://my-json-server.typicode.com/olena-zaporozhchenko/BA_Epam_lab2/vip_customers", function (data){
-				console.log(data)
 				var sum = 0;
 				var table = '<table class="table table-dark"> <thead><tr><th scope="col">#</th><th scope="col">Customer</th><th scope="col">City</th><th scope="col">Total</th></tr></thead><tbody>'
 				for (var str_idx in data) {
 					table += "<tr>"
-					//for (var col in str) {
 						table += "<th  scope='row'>" + (parseInt(str_idx) + 1) + "</th>"
 						table += "<td>" + data[str_idx].customer + "</td>"
 						table += "<td>" + data[str_idx].city + "</td>"
 						table += "<td>" + data[str_idx].total + "</td>"
 						sum += data[str_idx].total
-						//}
 					table += "/<tr>"
 				}
 				table += "<tr><td colspan=3>Sum</td><td>" + sum + "</td></tr>"
@@ -104,7 +101,7 @@
   <section id="about" class="about-section text-center">
     <div class="container">
       <div class="row">
-        <div id="dummy_div" class="col-lg-8 mx-auto">
+        <div class="col-lg-8 mx-auto">
           <h2 id="dummy_h" class="text-white mb-4">Built with Bootstrap 4</h2>
           <p id="dummy_p" class="text-white-50">Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
             <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
