@@ -1,0 +1,5 @@
+SELECT customers.cust_name as customer, customers.city, sum(orders.order_value) as total 
+from orders inner join customers on orders.cust_id=customers.cust_id
+group by orders.cust_id
+order by total desc 
+limit 5; 
